@@ -1,0 +1,23 @@
+{
+  "name": "notely-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["packages/server", "packages/web"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:web\"",
+    "dev:server": "npm run dev --workspace=@notely/server",
+    "dev:web": "npm run dev --workspace=@notely/web",
+    "build": "npm run build --workspace=@notely/web",
+    "start": "npm run start --workspace=@notely/server",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "docker:build": "docker build -t notely:latest .",
+    "docker:run": "docker run -p 3000:3000 -e NODE_ENV=production notely:latest"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
