@@ -16,7 +16,7 @@
     "zustand": "^5.0.3",
     "date-fns": "^4.1.0",
     "marked": "^15.0.7",
-    "dompurify": "^2.5.8"
+    "dompurify": "^3.4.14"
   },
   "devDependencies": {
     "@types/react": "^19.0.10",
